@@ -38,11 +38,12 @@ function operate(first,second,operator){
 }
 
 function getNumbersAndOperator(){
-    let show = "";
+
     let display = document.querySelector(".display");
     let numbers = document.querySelectorAll(".number");
     let operators = document.querySelectorAll(".operator");
     let equal = document.querySelector(".equal");
+    let clear = document.querySelector(".clear");
     let doAction = firstAction;
 
 
@@ -52,8 +53,12 @@ function getNumbersAndOperator(){
         doAction(e);
     }
     operators.forEach((o)=> o.addEventListener("click", (e)=>{
+        if(second != ""){
+            equal.click();
+        }
         doAction = secondAction;
         operator = e.target.value;
+        display.innerHTML = first + " " + operator;
         console.log(operator);
 
     }
@@ -63,17 +68,32 @@ function getNumbersAndOperator(){
 
     function firstAction(e){
         first += e.target.value;
+        display.innerHTML = first+" " ;
         console.log(first);
     }
 
     function secondAction(e){
         second += e.target.value;
+        display.innerHTML = first + " " + operator + " " + second;
         console.log(second);
     }
 
     equal.addEventListener("click",(e)=> {
         let result = operate(Number(first),Number(second),operator)
+        display.innerHTML= result;
+        first = result;
+        second = "";
+        operator = "";
         console.log(result);
+    })
+
+    clear.addEventListener("click",(e)=>{
+        first = "";
+        second ="";
+        operator = "";
+        display.innerHTML = "";
+        doAction = firstAction;
+
     })
 
 
