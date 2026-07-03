@@ -11,7 +11,12 @@ function multiply(first, second){
 }
 
 function divide(first, second){
+
     return first/second;
+}
+
+function isFloat(n) {
+    return Number(n) === n && n % 1 !== 0;
 }
 
 let first ="";
@@ -79,9 +84,26 @@ function getNumbersAndOperator(){
     }
 
     equal.addEventListener("click",(e)=> {
-        let result = operate(Number(first),Number(second),operator)
-        display.innerHTML= result;
-        first = result;
+        let result = "";
+        if(first == ""){
+            return 
+        }else if(operator == "" || second == ""){
+            result = Number(first);
+        }else {
+            result = operate(Number(first),Number(second),operator);
+  
+        }
+
+        if(!Number.isFinite(result)){
+            display.innerHTML = "pay more attention in math class!"
+            
+            
+        }else{
+            display.innerHTML= isFloat(result) ? result.toFixed(5) : result;
+
+        }
+        first = "";
+        doAction = firstAction;
         second = "";
         operator = "";
         console.log(result);
