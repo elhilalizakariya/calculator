@@ -1,35 +1,63 @@
 body {
-    background-image: url('./assets/pexels-thefullonmonet-28380282.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+
+    height: 100vh;
+    display:flex;
+    align-items:center;
+    
+
+
+    
+}
+
+html {
+  --s: 150px; /* control the size*/
+  --c1: #336666;
+  --c2: #ffffff;
+  
+  --_g: #0000 90deg,var(--c1) 0;
+  background: 
+    conic-gradient(from 90deg at 2px 2px,var(--_g)),
+    conic-gradient(from 90deg at 1px 1px,var(--_g)),
+    var(--c2);
+  background-size: var(--s) var(--s), calc(var(--s)/5) calc(var(--s)/5);
+}
+
+@font-face {
+  font-family: myFont; /* set name */
+  src: url(assets/digital-7/digital-7.ttf); /* url of the font */
 }
 
 
 .calculator{
     display:flex;
-    background: lightGrey;
+    background: #1a1a1a;
     width:max-content;
+    font-family:myFont;
     margin:auto;
     flex-direction:column;
     align-items:center;
     border-radius: 20px;
-    padding:20px;
+    padding:30px;
     border:3px solid black;
+
+
 
 }
 
 .display{
     width:100%;
-    background-color:darkGrey;
-    height: 80px;
+    background-color:#8eae78;
+    height: 100px;
     font-size:48px;
     display:flex;
     justify-content:flex-end;
+    align-items:center;
+    box-sizing: border-box;
     border-radius: 20px;
     border: 3px solid black;
-    margin-bottom:20px;
+    padding:0px 15px 10px 15px;
+    color:black;
+
     
 
 
@@ -39,7 +67,6 @@ body {
 .buttons{
      border-radius: 10px;
     box-sizing: border-box; 
-
     max-width:400px;
 
     display:flex;
@@ -48,17 +75,30 @@ body {
     align-content:space-around;
     gap:20px;
     justify-content:space-evenly;
+    margin-top:20px;
+    height:400px;
 }
 
 button{
     flex: 1 20%;
-    border-radius:20px;
+    border-radius:10px;
+    border: 1px solid black;
     font-size: 26px;
+    color:white;
+    
 
 }
 .equal{
     flex: 1 46%;
+    background-color: #fea525;
 
+}
+
+.number,.dot,.operator,.back,.modulo{
+    background-color: #636363;
+}
+.clear{
+    background-color: #fd3230;
 }
 
 button{

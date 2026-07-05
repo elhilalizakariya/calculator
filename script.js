@@ -31,7 +31,7 @@ function operate(first,second,operator){
         case "-":
             return subtract(first,second);
             break;
-        case "*":
+        case "x":
             return multiply(first,second);
             break;
         case "/":
@@ -96,13 +96,13 @@ function getNumbersAndOperator(){
 
         if(!Number.isFinite(result)){
             display.innerHTML = "pay more attention in math class!"
-            
+            first = "";
             
         }else{
             display.innerHTML= isFloat(result) ? result.toFixed(5) : result;
-
+            first = result;
         }
-        first = "";
+        
         doAction = firstAction;
         second = "";
         operator = "";
