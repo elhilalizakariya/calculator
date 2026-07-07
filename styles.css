@@ -3,24 +3,19 @@ body {
     height: 100vh;
     display:flex;
     align-items:center;
-    
 
-
-    
-}
-
-html {
-  --s: 150px; /* control the size*/
-  --c1: #336666;
-  --c2: #ffffff;
+      /* Step 1: Link your image asset */
+  background-image: url('assets/77bf3edadad4292b5b46a1a72f0657d9.jpg');
   
-  --_g: #0000 90deg,var(--c1) 0;
-  background: 
-    conic-gradient(from 90deg at 2px 2px,var(--_g)),
-    conic-gradient(from 90deg at 1px 1px,var(--_g)),
-    var(--c2);
-  background-size: var(--s) var(--s), calc(var(--s)/5) calc(var(--s)/5);
+  /* Step 2: Force the image to repeat horizontally and vertically */
+  background-repeat: repeat; 
+  
+  /* Step 3: Optional - Control the scale/size of the pattern tile */
+    background-size: 500px auto;
+     
 }
+
+
 
 @font-face {
   font-family: myFont; /* set name */
@@ -30,7 +25,7 @@ html {
 
 .calculator{
     display:flex;
-    background: #1a1a1a;
+    background: #fccfca;
     width:max-content;
     font-family:myFont;
     margin:auto;
@@ -39,6 +34,7 @@ html {
     border-radius: 20px;
     padding:30px;
     border:3px solid black;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 
 
 
@@ -46,7 +42,7 @@ html {
 
 .display{
     width:100%;
-    background-color:#8eae78;
+    background-color:#faefe7;
     height: 100px;
     font-size:48px;
     display:flex;
@@ -82,27 +78,73 @@ html {
 button{
     flex: 1 20%;
     border-radius:10px;
-    border: 1px solid black;
+    border: 2px solid pink;
     font-size: 26px;
-    color:white;
+    color:black;
     
 
 }
 .equal{
     flex: 1 46%;
-    background-color: #fea525;
+    background-color: #b4e7ff;
+    border:2px solid #a3dffb;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#96cde6 0 -3px 0 inset;
+
 
 }
 
 .number,.dot,.operator,.back,.modulo{
-    background-color: #636363;
+    background-color: #faefe7;
 }
 .clear{
-    background-color: #fd3230;
+    background-color: #ff4e4b;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#e94744 0 -3px 0 inset;
+
 }
 
 button{
     width:50px;
     height:50px;
 }
+
+
+button {
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 15px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#ece0d7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+
+button:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+		
 
